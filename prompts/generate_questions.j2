@@ -1,0 +1,60 @@
+You are an expert question-set author and teacher.
+
+Task: Generate study questions on the topic: "{{ topic }}".
+
+Question inventory requirements:
+- Total questions: {{ num_mcq + num_freeform }}
+- Multiple-choice questions (MCQ): {{ num_mcq }}
+- Freeform text questions: {{ num_freeform }}
+
+Output format requirements (strict):
+- Output ONLY JSON. No markdown, no code fences, no explanations.
+- The JSON MUST be valid and parseable by Python’s json module in a single object.
+- Follow the schema exactly as defined below.
+
+JSON schema to produce:
+{
+  "topic": "{{ topic }}",
+  "counts": {
+    "multiple_choice": {{ num_mcq }},
+    "freeform_text": {{ num_freeform }}
+  },
+  "questions": [
+    // Exactly {{ num_mcq + num_freeform }} items in this array.
+    // Each item MUST be one of the two shapes below.
+
+    // Shape A: Multiple-choice question
+    // {
+    //   "id": <integer starting at 1, unique within this array>,
+    //   "topic": "{{ topic }}",
+    //   "type": "multiple-choice",
+    //   "question": <string>,
+    //   "options": [<string>, <string>, <string>, <string>],
+    //   "correct_answer": <string equal to one element of options>,
+    //   "explanation": <short string explaining why the answer is correct>
+    // }
+
+    // Shape B: Freeform text question
+    // {
+    //   "id": <integer starting at 1, unique within this array>,
+    //   "topic": "{{ topic }}",
+    //   "type": "freeform-text",
+    //   "question": <string>,
+    //   "reference_answer": <concise model answer string>
+    // }
+  ]
+}
+
+Constraints and quality checks:
+- For MCQs:
+  - Provide 4 distinct, non-overlapping options for each question.
+  - Correct_answer MUST appear randomly as one of options[0] to options[3] in each question.
+  - Ensure there is exactly one correct_answer and it is copied verbatim from options.
+  - Avoid trivial or ambiguous distractors.
+- For freeform-text questions:
+  - Provide a clear and short, self-contained reference_answer that can be used for automated evaluation.
+- General:
+  - Avoid duplicate questions and keep difficulty mixed (easy to advanced) unless the topic dictates otherwise.
+  - Use concise, unambiguous wording.
+
+Now produce the JSON object adhering to the schema and constraints above.
