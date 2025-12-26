@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "topic": "python",
+    "type": "multiple-choice",
+    "question": "What is the correct way to open a file for reading in Python?",
+    "source": "LLM",
+    "active": false,
+    "times_shown": 18,
+    "correct_count": 12,
+    "incorrect_count": 6,
+    "options": [
+      "open(\"file.txt\", \"r\")",
+      "open(\"file.txt\", \"w\")",
+      "file.open(\"file.txt\")",
+      "open(\"file.txt\", \"rw\")"
+    ],
+    "correct_answer": "open(\"file.txt\", \"r\")",
+    "explanation": "Opening with mode 'r' reads the file; 'w' would write and truncate, and 'rw' is invalid."
+  },
+  {
+    "id": 2,
+    "topic": "python",
+    "type": "multiple-choice",
+    "question": "Which keyword is used to create a generator in Python?",
+    "source": "LLM",
+    "active": true,
+    "times_shown": 6,
+    "correct_count": 5,
+    "incorrect_count": 1,
+    "options": [
+      "yield",
+      "return",
+      "yield from",
+      "raise"
+    ],
+    "correct_answer": "yield",
+    "explanation": "Generator functions use the yield keyword to produce values lazily."
+  },
+  {
+    "id": 3,
+    "topic": "python",
+    "type": "multiple-choice",
+    "question": "Which built-in function would you use to get the number of items in a container?",
+    "source": "LLM",
+    "active": false,
+    "times_shown": 25,
+    "correct_count": 17,
+    "incorrect_count": 8,
+    "options": [
+      "length()",
+      "size()",
+      "len()",
+      "count()"
+    ],
+    "correct_answer": "len()",
+    "explanation": "The len() function returns the number of items in a container."
+  },
+  {
+    "id": 4,
+    "topic": "python",
+    "type": "freeform-text",
+    "question": "Describe the difference between shallow copy and deep copy in Python.",
+    "source": "LLM",
+    "active": true,
+    "times_shown": 12,
+    "correct_count": 5,
+    "incorrect_count": 7,
+    "reference_answer": "Shallow copy duplicates the top-level container but keeps references to nested objects; deep copy recursively copies nested objects, creating entirely independent copies."
+  },
+  {
+    "id": 5,
+    "topic": "python loops",
+    "type": "freeform-text",
+    "question": "Explain how a while loop works in Python.",
+    "source": "LLM",
+    "active": false,
+    "times_shown": 8,
+    "correct_count": 2,
+    "incorrect_count": 6,
+    "reference_answer": "A while loop in Python repeatedly executes a block of code as long as a given condition is true. The loop evaluates the condition before each iteration."
+  },
+  {
+    "id": 6,
+    "topic": "python",
+    "type": "multiple-choice",
+    "question": "Which of the following data types is immutable in Python?",
+    "source": "LLM",
+    "active": true,
+    "times_shown": 0,
+    "correct_count": 0,
+    "incorrect_count": 0,
+    "options": [
+      "List",
+      "Tuple",
+      "Dictionary",
+      "Set"
+    ],
+    "correct_answer": "Tuple",
+    "explanation": "Tuples are immutable, meaning their elements cannot be changed after they are created."
+  },
+  {
+    "id": 7,
+    "topic": "python",
+    "type": "freeform-text",
+    "question": "What is the purpose of the 'self' parameter in Python class methods?",
+    "source": "LLM",
+    "active": true,
+    "times_shown": 0,
+    "correct_count": 0,
+    "incorrect_count": 0,
+    "reference_answer": "The 'self' parameter refers to the instance of the class and is used to access instance attributes and methods."
+  }
+]
